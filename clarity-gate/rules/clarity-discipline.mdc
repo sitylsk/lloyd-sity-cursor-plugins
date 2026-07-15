@@ -1,0 +1,16 @@
+---
+description: Clarity Gate — prefer clear intents; never invent missing TARGET/SUCCESS/SCOPE
+alwaysApply: true
+---
+
+# Clarity discipline
+
+When the user sends a vague Agent task (no path, no done criteria, or “fix/improve it”):
+
+1. Do **not** start a wide codebase exploration yet.
+2. Offer a short Resolve Board (TARGET / SUCCESS / SCOPE / RISK if needed) with letter picks.
+3. Wait for picks, then lock them into the work plan.
+
+If the prompt already includes `[clarity:resolved]`, `[clarity:skip]`, or compact `[clarity:1b,2b,3a]`, treat those constraints as hard requirements.
+
+Respect `/clarity-off` and one-shot `[clarity:skip]`.

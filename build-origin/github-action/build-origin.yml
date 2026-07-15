@@ -1,0 +1,41 @@
+# Copy to your repo as .github/workflows/build-origin.yml
+name: Build Origin report
+
+on:
+  push:
+    paths:
+      - ".cursor/build-origin/ledger.json"
+      - "BUILD_ORIGIN.md"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Ensure report exists
+        run: |
+          if [ -f .cursor/build-origin/ledger.json ]; then
+            echo "Ledger present"
+          else
+            echo "No ledger yet — skipping"
+            exit 0
+          fi
+      - name: Commit visible marker
+        run: |
+          # Keep BUILD_ORIGIN.md authoritative from the ledger when present.
+          # Regeneration of full markdown requires the plugin scripts; if they
+          # are vendored under tools/build-origin, run them here.
+          if [ -f tools/build-origin/scripts/build-origin-report.mjs ]; then
+            node tools/build-origin/scripts/build-origin-report.mjs .
+          fi
+          git config user.name "build-origin-bot"
+          git config user.email "build-origin@users.noreply.github.com"
+          git add BUILD_ORIGIN.md || true
+          git diff --staged --quiet || git commit -m "chore: refresh BUILD_ORIGIN.md"
+          git push || true

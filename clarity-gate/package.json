@@ -1,0 +1,17 @@
+{
+  "name": "clarity-gate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Clarity Gate — block vague Agent prompts before they burn tokens",
+  "scripts": {
+    "score": "node scripts/cli-score.mjs",
+    "test": "node scripts/self-test.mjs",
+    "clarity-on": "node scripts/clarity-on.mjs",
+    "clarity-off": "node scripts/clarity-off.mjs",
+    "status": "node scripts/clarity-status.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

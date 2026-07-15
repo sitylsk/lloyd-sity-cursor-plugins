@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.cursor/clarity-gate/
+.cursor/hooks.json
+.env
+.env.*
+*.local

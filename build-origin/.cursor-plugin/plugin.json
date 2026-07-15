@@ -1,0 +1,20 @@
+{
+  "name": "build-origin",
+  "version": "1.0.0",
+  "description": "Track how much of a project was built on desktop vs mobile vs cloud/web. Writes a GitHub-visible BUILD_ORIGIN.md report. Easy /build-origin-on and /build-origin-off.",
+  "author": {
+    "name": "Lloyd Sity"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mobile",
+    "desktop",
+    "provenance",
+    "analytics",
+    "github",
+    "cursor-ios",
+    "hooks"
+  ],
+  "logo": "assets/logo.svg",
+  "hooks": "hooks/hooks.json"
+}

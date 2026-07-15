@@ -1,0 +1,8 @@
+---
+description: When Build Origin is on, tag mobile sessions with /origin-as mobile
+alwaysApply: false
+---
+
+# Build Origin hint
+
+If the user says they are on phone / iOS / Android / Remote Control, run or remind `/origin-as mobile` so edits attribute correctly.

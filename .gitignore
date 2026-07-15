@@ -1,0 +1,17 @@
+# Local Cursor runtime (do not publish machine-specific hooks/state)
+.cursor/clarity-gate/
+.cursor/build-origin/
+.cursor/hooks.json
+BUILD_ORIGIN.md
+
+# OS / tooling
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.env
+.env.*
+*.local
+
+# Nested git if present
+clarity-gate/.git/

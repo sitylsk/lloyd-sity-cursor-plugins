@@ -1,0 +1,15 @@
+{
+  "name": "build-origin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Track Cursor desktop vs mobile vs cloud build provenance — by Lloyd Sity",
+  "scripts": {
+    "test": "node scripts/self-test.mjs",
+    "on": "node scripts/build-origin-on.mjs",
+    "off": "node scripts/build-origin-off.mjs",
+    "status": "node scripts/build-origin-status.mjs",
+    "report": "node scripts/build-origin-report.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

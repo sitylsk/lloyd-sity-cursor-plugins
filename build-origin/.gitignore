@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.cursor/build-origin/session.json
+.cursor/build-origin/state.json
+.env
+.env.*
+*.local

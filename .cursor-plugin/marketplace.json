@@ -1,0 +1,28 @@
+{
+  "name": "lloyd-sity-plugins",
+  "owner": {
+    "name": "Lloyd Sity"
+  },
+  "metadata": {
+    "description": "Cursor plugins by Lloyd Sity — Clarity Gate and Build Origin",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "clarity-gate",
+      "source": "clarity-gate",
+      "description": "Block vague Agent prompts before they burn tokens. Resolve Board for clear intents.",
+      "author": { "name": "Lloyd Sity" },
+      "version": "1.0.0",
+      "keywords": ["clarity", "hooks", "agent", "prompt"]
+    },
+    {
+      "name": "build-origin",
+      "source": "build-origin",
+      "description": "Track how much of a project was built on desktop vs mobile vs cloud/web. GitHub-visible report.",
+      "author": { "name": "Lloyd Sity" },
+      "version": "1.0.0",
+      "keywords": ["mobile", "desktop", "provenance", "github"]
+    }
+  ]
+}
