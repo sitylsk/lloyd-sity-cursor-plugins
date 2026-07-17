@@ -51,6 +51,11 @@ export function isBypassPrompt(prompt) {
   return false;
 }
 
+/** True only for a deliberate one-off skip (not a clarified resend). */
+export function isSkipPrompt(prompt) {
+  return CLARITY_BYPASS.test(String(prompt || "").trim());
+}
+
 export function isFollowUp(prompt) {
   const text = String(prompt || "").trim();
   if (text.length > 48) return false;
@@ -287,16 +292,22 @@ export function buildResolveBoard(analysis, prompt) {
 }
 
 /** Short popup text — Cursor shows this as a toast/popup, not a window. */
-export function formatPopupMessage(board) {
+export function formatPopupMessage(board, tokensSaved) {
   const demo = board.questions.map((q) => `${q.id}a`).join(",");
   const why = board.reasons.slice(0, 2).join("; ");
+  const saved = Number(tokensSaved) > 0
+    ? `Saved ~${Number(tokensSaved).toLocaleString("en-US")} tokens of likely rework.`
+    : null;
   return [
     `Clarity Gate blocked this (ambiguity ${board.score}/100).`,
     `Open: .cursor/clarity-gate/RESOLVE_BOARD.md`,
     `Or resend: [clarity:${demo}] ${summarizePrompt(board.originalPrompt)}`,
     `Why: ${why}`,
+    saved,
     `Bypass once: [clarity:skip]`,
-  ].join("\n");
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 /** Full board written to RESOLVE_BOARD.md for the editor. */

@@ -1,7 +1,7 @@
 {
   "name": "clarity-gate",
-  "version": "1.0.0",
-  "description": "Block vague Agent prompts before they burn tokens. Scores ambiguity, shows a 10-second Resolve Board, and only lets clear intents through.",
+  "version": "1.1.0",
+  "description": "Block vague Agent prompts before they burn tokens. Scores ambiguity, shows a 10-second Resolve Board, and tracks the tokens/$ it saves you.",
   "author": {
     "name": "Lloyd Sity"
   },

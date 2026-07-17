@@ -6,11 +6,15 @@
 import {
   appendDebug,
   emit,
+  estimateTokensSaved,
+  hadRecentBlock,
   projectRoot,
   readState,
   readStdin,
+  recordGateEvent,
   writeLastBoard,
   writeResolveBoardMd,
+  writeRoiReport,
 } from "./lib.mjs";
 import {
   buildResolveBoard,
@@ -18,6 +22,7 @@ import {
   formatPopupMessage,
   isBypassPrompt,
   isFollowUp,
+  isSkipPrompt,
   scorePrompt,
   shouldGateMode,
 } from "./score.mjs";
@@ -57,7 +62,17 @@ async function main() {
   }
 
   if (isBypassPrompt(prompt)) {
-    appendDebug(root, "allow: bypass tag");
+    // A resend right after a block = the user clarified (a win we should credit).
+    // A raw [clarity:skip] = deliberate bypass (gate overhead we should own).
+    const skip = isSkipPrompt(prompt);
+    if (skip) {
+      appendDebug(root, "allow: bypass skip");
+      recordAndReport(root, state, "bypassed");
+    } else {
+      const resolved = hadRecentBlock(root);
+      appendDebug(root, `allow: clarity picks resolved=${resolved}`);
+      recordAndReport(root, state, resolved ? "resolved" : "passed");
+    }
     emit({ continue: true });
     return;
   }
@@ -73,11 +88,13 @@ async function main() {
 
   if (analysis.score < threshold) {
     appendDebug(root, `allow: score ${analysis.score} < ${threshold}`);
+    recordAndReport(root, state, "passed", { score: analysis.score });
     emit({ continue: true });
     return;
   }
 
   const board = buildResolveBoard(analysis, prompt);
+  const tokensSaved = estimateTokensSaved(analysis);
   try {
     writeLastBoard(root, board);
     writeResolveBoardMd(root, formatBoardMarkdown(board));
@@ -85,11 +102,22 @@ async function main() {
     appendDebug(root, `write-board-fail: ${err?.message || err}`);
   }
 
-  appendDebug(root, `BLOCK score=${analysis.score}`);
+  recordAndReport(root, state, "blocked", { score: analysis.score, tokensSaved });
+
+  appendDebug(root, `BLOCK score=${analysis.score} tokensSaved~=${tokensSaved}`);
   emit({
     continue: false,
-    user_message: formatPopupMessage(board),
+    user_message: formatPopupMessage(board, tokensSaved),
   });
+}
+
+function recordAndReport(root, state, action, info = {}) {
+  try {
+    const stats = recordGateEvent(root, action, info);
+    if (stats) writeRoiReport(root, stats, state);
+  } catch (err) {
+    appendDebug(root, `roi-record-fail: ${err?.message || err}`);
+  }
 }
 
 main().catch((err) => {

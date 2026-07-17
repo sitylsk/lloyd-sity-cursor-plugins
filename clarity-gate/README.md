@@ -64,9 +64,22 @@ See [docs/WHERE-IS-THE-UI.md](docs/WHERE-IS-THE-UI.md).
 | Arm | `/clarity-on` |
 | Disarm | `/clarity-off` |
 | Status | `/clarity-status` |
+| ROI / savings | `/clarity-roi` |
 | Finish board | `/clarify` or open `RESOLVE_BOARD.md` |
 | Bypass once | Prepend `[clarity:skip]` |
 | Resolved resend | `[clarity:1b,2b,3a] your task…` |
+
+## Proof it pays for itself (ROI)
+
+Every block estimates the tokens a vague Agent turn would have burned
+(exploration + a likely-wrong first attempt), and Clarity Gate keeps a running
+tally. Run `/clarity-roi` to see estimated **tokens/$ saved**, prompts blocked,
+and your **comply rate** (clarified-and-resent vs `[clarity:skip]` bypassed).
+
+The report is written to `.cursor/clarity-gate/CLARITY_ROI.md` — commit it to
+make the savings visible on GitHub. The token figure is a deliberately
+conservative estimate, not a measured value; tune the `$` rate with
+`usdPerMillionTokens` in `state.json`.
 
 ### Try it
 
@@ -84,11 +97,13 @@ See [docs/WHERE-IS-THE-UI.md](docs/WHERE-IS-THE-UI.md).
   "enabled": true,
   "threshold": 45,
   "modes": ["agent"],
-  "allowFollowUps": true
+  "allowFollowUps": true,
+  "usdPerMillionTokens": 6
 }
 ```
 
-Lower `threshold` = stricter.
+Lower `threshold` = stricter. `usdPerMillionTokens` only affects the `$`
+figure in the ROI report (tokens are tracked regardless).
 
 ## How it works
 
