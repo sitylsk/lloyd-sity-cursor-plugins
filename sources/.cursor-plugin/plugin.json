@@ -1,0 +1,18 @@
+{
+  "name": "sources",
+  "version": "1.0.0",
+  "description": "Save research into a local library, require a citation on every claim, and draft posts, docs, or briefs from those sources.",
+  "author": {
+    "name": "Lloyd Sity"
+  },
+  "license": "MIT",
+  "keywords": [
+    "sources",
+    "citations",
+    "research",
+    "writing",
+    "productivity",
+    "briefs"
+  ],
+  "logo": "assets/logo.svg"
+}
