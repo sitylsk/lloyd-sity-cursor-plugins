@@ -8,13 +8,13 @@ alwaysApply: true
 When creating or editing a Cursor marketplace plugin:
 
 1. Use a **unique**, **lowercase kebab-case** plugin `name` (alphanumerics, hyphens, and periods; must start and end with an alphanumeric). Examples: `grok-plugin-maker`, `clarity-gate`.
-2. Every plugin needs `.cursor-plugin/plugin.json`. Required: `name`. Recommended in this repo: `version`, `description`, `author.name` (**Lloyd Sity**), `license`, `keywords`, `logo`. Omit `displayName` unless other plugins in the same repo already use it.
+2. Every plugin needs `.cursor-plugin/plugin.json`. Required: `name`. Recommended: `version`, `description`, `author.name` (the publisher’s real name or org — ask the user if unknown; never invent an email), `license`, `keywords`, `logo`. Omit `displayName` unless other plugins in the same repo already use it. In this marketplace repo, siblings omit it.
 3. Component frontmatter:
    - Rules (`rules/*.mdc`): `description` (plus `alwaysApply` / `globs` when needed)
    - Skills (`skills/<name>/SKILL.md`): `name`, `description`
    - Agents (`agents/*.md`): `name`, `description`
    - Commands (`commands/*`): `name`, `description`
-4. Register each plugin in the repo-root `.cursor-plugin/marketplace.json`. `source` is a **relative path from the repository root**. This Lloyd Sity marketplace is multi-plugin **at the root** (`clarity-gate/`, `build-origin/`, `grok-plugin-maker/`) — use `"source": "<folder-name>"`, not `plugins/<name>`.
+4. Register each plugin in the repo-root `.cursor-plugin/marketplace.json`. `source` is a **relative path from the repository root**. In a root-level multi-plugin marketplace (e.g. this repo: `clarity-gate/`, `build-origin/`, `grok-plugin-maker/`) use `"source": "<folder-name>"`, not `plugins/<name>`. Keep marketplace `author.name` consistent with that plugin’s `plugin.json`.
 5. Official template defaults to `plugins/<name>` and `"source": "./plugins/<name>"`. **Match the repo you are in** when those conflict. Single-plugin repos: plugin files at the repo root, one `.cursor-plugin/plugin.json`, no `marketplace.json`.
-6. Add only the components you need. Do not leave `starter-simple` / `starter-advanced` placeholders, invented emails, or secrets.
-7. Validate before submit. Public submit: https://cursor.com/marketplace/publish. Team import: Dashboard → Plugins → Import this GitHub repo.
+6. Add only the components you need. Do not leave `starter-simple` / `starter-advanced` placeholders, invented emails, invented author names, or secrets.
+7. Validate before submit. Public submit: https://cursor.com/marketplace/publish. Team import: Dashboard → Plugins → Import the GitHub repo.

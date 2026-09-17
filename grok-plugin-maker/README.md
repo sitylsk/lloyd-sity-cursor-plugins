@@ -6,12 +6,12 @@ Created by **Lloyd Sity**.
 
 Grok Plugin Maker is a skills + rules plugin. Use it when you are scaffolding a new Cursor plugin, editing `plugin.json` / `marketplace.json`, or preparing a Marketplace submission.
 
-It is based on the official [Cursor plugin template](https://github.com/cursor/plugin-template). This Lloyd Sity marketplace is **multi-plugin at the repository root** (no `plugins/` subdirectory) — match that layout when adding plugins here.
+It is based on the official [Cursor plugin template](https://github.com/cursor/plugin-template). Skills and the authoring rule work for **any publisher** — use the user’s real name/org (ask if unknown; never invent emails). This marketplace repo is one example of a **root-level multi-plugin** layout (sibling folders, no `plugins/` subdirectory). Official template repos instead use `plugins/<name>/`.
 
 ## When to use
 
 - Starting a new plugin from the official template
-- Adding a plugin folder next to `clarity-gate/` and `build-origin/`
+- Adding a plugin folder to a multi-plugin marketplace (e.g. next to `clarity-gate/` and `build-origin/` in this repo)
 - Filling manifests, logos, and component frontmatter
 - Checking a plugin before [Marketplace publish](https://cursor.com/marketplace/publish) or team import
 
@@ -20,7 +20,7 @@ It is based on the official [Cursor plugin template](https://github.com/cursor/p
 | Kind | Path | Role |
 |---|---|---|
 | Rule | `rules/plugin-authoring.mdc` | Names, required fields, frontmatter, marketplace `source`, layouts, validate-then-submit |
-| Skill | `skills/create-plugin-from-template` | Scaffold from the template or into a Lloyd Sity-style multi-plugin repo |
+| Skill | `skills/create-plugin-from-template` | Scaffold from the template or into a multi-plugin marketplace repo |
 | Skill | `skills/customize-plugin-manifest` | Edit `plugin.json` and `marketplace.json`; logos and common pitfalls |
 | Skill | `skills/validate-and-submit-plugin` | Pre-submit checklist and publish path |
 
