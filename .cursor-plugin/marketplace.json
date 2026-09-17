@@ -4,8 +4,8 @@
     "name": "Lloyd Sity"
   },
   "metadata": {
-    "description": "Cursor plugins by Lloyd Sity — Clarity Gate, Build Origin, and Grok Plugin Maker",
-    "version": "1.1.0"
+    "description": "Cursor plugins by Lloyd Sity — Clarity Gate, Build Origin, and Plugin Maker",
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -25,12 +25,12 @@
       "keywords": ["mobile", "desktop", "provenance", "github"]
     },
     {
-      "name": "grok-plugin-maker",
-      "source": "grok-plugin-maker",
-      "description": "Create and validate Cursor marketplace plugins from the official template",
+      "name": "plugin-maker",
+      "source": "plugin-maker",
+      "description": "Create any Cursor marketplace plugin — choose simple or advanced, then scaffold from the official template",
       "author": { "name": "Lloyd Sity" },
-      "version": "1.0.0",
-      "keywords": ["cursor", "plugin", "marketplace", "template", "skills", "grok"]
+      "version": "1.1.0",
+      "keywords": ["cursor", "plugin", "marketplace", "template", "scaffold", "skills"]
     }
   ]
 }

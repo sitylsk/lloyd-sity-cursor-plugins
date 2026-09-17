@@ -6,7 +6,7 @@ Plugins by **Lloyd Sity**.
 |---|---|
 | [clarity-gate](./clarity-gate) | Blocks vague Agent prompts; Resolve Board before spend |
 | [build-origin](./build-origin) | Tracks desktop vs mobile vs cloud/web build mix; GitHub report |
-| [grok-plugin-maker](./grok-plugin-maker) | Scaffold, customize, and validate Cursor marketplace plugins |
+| [plugin-maker](./plugin-maker) | Create any Cursor marketplace plugin — simple or advanced scaffold |
 
 ## Install both (local)
 
@@ -17,11 +17,11 @@ powershell -ExecutionPolicy Bypass -File .\build-origin\scripts\install-local.ps
 
 Then **Developer: Reload Window**.
 
-Grok Plugin Maker is skills + rules only (no install script). From the repo root:
+Plugin Maker is skills + rules only (no install script). From the repo root:
 
 ```bash
 mkdir -p ~/.cursor/plugins/local
-ln -sfn "$(pwd)/grok-plugin-maker" ~/.cursor/plugins/local/grok-plugin-maker
+ln -sfn "$(pwd)/plugin-maker" ~/.cursor/plugins/local/plugin-maker
 ```
 
 Then **Developer: Reload Window**.
