@@ -2,7 +2,7 @@
 
 ## 1.1.0 — 2026-09-17
 
-- Renamed the plugin identity from `grok-plugin-maker` to **plugin-maker** (Plugin Maker)
+- Released as **plugin-maker** (Plugin Maker)
 - Plugin factory: scaffold **any** marketplace plugin (any topic, any publisher)
 - Simple vs Advanced starter choice (`choose-plugin-starter`) mapped to official `starter-simple` / `starter-advanced`
 - Expanded `create-plugin-from-template` interview + real-file scaffold
