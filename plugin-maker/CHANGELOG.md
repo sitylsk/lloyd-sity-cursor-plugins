@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Marketplace logo is now the hexagonal network emblem (`assets/logo.png`)
+- Marketplace logo available as SVG (`assets/logo.svg`)
 
 ## 1.1.0 — 2026-09-17
 
