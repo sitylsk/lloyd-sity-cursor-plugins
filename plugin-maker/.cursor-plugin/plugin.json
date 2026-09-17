@@ -1,0 +1,18 @@
+{
+  "name": "plugin-maker",
+  "version": "1.1.0",
+  "description": "Create any Cursor marketplace plugin: choose simple or advanced, then scaffold, customize, validate, and prepare submission from the official template.",
+  "author": {
+    "name": "Lloyd Sity"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cursor",
+    "plugin",
+    "marketplace",
+    "template",
+    "scaffold",
+    "skills"
+  ],
+  "logo": "assets/logo.svg"
+}
