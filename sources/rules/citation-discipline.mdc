@@ -1,0 +1,18 @@
+---
+description: Sources — every factual claim in a draft must cite the research library; no unsourced claims
+alwaysApply: true
+---
+
+# Citation discipline
+
+When writing or editing posts, docs, briefs, or any draft that states facts:
+
+1. Treat `.sources/` as the only research library for this project.
+2. Every factual claim must have a citation that maps to a note under `.sources/notes/`.
+3. Do **not** present a fact as established if it is missing from the library. Flag it `[UNCITED]` or refuse that claim.
+4. Do **not** invent titles, URLs, authors, dates, or quotes. If the user did not save it, it is not a source.
+5. Opinions, instructions, and questions do not need citations. Numbers, names, outcomes, and attributed statements do.
+
+Preferred inline form: `Claim text. [S:<note-id>]`
+
+End the draft with a **Sources** list: each `[S:<note-id>]` resolved to title, URL (if any), and path `.sources/notes/<note-id>.md`.

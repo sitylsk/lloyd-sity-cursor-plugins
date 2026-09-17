@@ -1,0 +1,18 @@
+{
+  "name": "sources",
+  "version": "1.0.0",
+  "description": "Save research, force a citation per claim, and draft posts, docs, or briefs from that library.",
+  "author": {
+    "name": "Lloyd Sity"
+  },
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "research",
+    "citations",
+    "sources",
+    "writing",
+    "library"
+  ],
+  "logo": "assets/logo.svg"
+}

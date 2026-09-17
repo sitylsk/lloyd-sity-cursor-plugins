@@ -7,6 +7,7 @@ Plugins by **Lloyd Sity**.
 | [clarity-gate](./clarity-gate) | Blocks vague Agent prompts; Resolve Board before spend |
 | [build-origin](./build-origin) | Tracks desktop vs mobile vs cloud/web build mix; GitHub report |
 | [plugin-maker](./plugin-maker) | Create any Cursor marketplace plugin — simple or advanced scaffold |
+| [sources](./sources) | Save research, force a citation per claim, draft from that library |
 
 ## Install both (local)
 
@@ -17,11 +18,12 @@ powershell -ExecutionPolicy Bypass -File .\build-origin\scripts\install-local.ps
 
 Then **Developer: Reload Window**.
 
-Plugin Maker is skills + rules only (no install script). From the repo root:
+Plugin Maker and Sources are skills + rules only (no install script). From the repo root:
 
 ```bash
 mkdir -p ~/.cursor/plugins/local
 ln -sfn "$(pwd)/plugin-maker" ~/.cursor/plugins/local/plugin-maker
+ln -sfn "$(pwd)/sources" ~/.cursor/plugins/local/sources
 ```
 
 Then **Developer: Reload Window**.
