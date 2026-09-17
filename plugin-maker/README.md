@@ -1,6 +1,8 @@
 # Plugin Maker
 
-Created by **Lloyd Sity**.
+<img src="assets/logo.png" alt="Plugin Maker hexagonal network emblem" width="96" height="96">
+
+Created by **Lloyd Sity**. Marketplace mark: hexagonal network emblem on indigo `#1A1033`.
 
 **Create any Cursor marketplace plugin — choose simple or advanced, then scaffold from the official template.**
 
