@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Marketplace logo is now the hexagonal network emblem (`assets/logo.png`)
+
 ## 1.1.0 — 2026-09-17
 
 - Released as **plugin-maker** (Plugin Maker)
